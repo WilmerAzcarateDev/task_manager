@@ -19,7 +19,7 @@ export class LabsComponent {
 
   name = signal('Wilmer');
 
-  age = 18;
+  age = signal(18);
 
   disabled = true;
 
@@ -40,7 +40,9 @@ export class LabsComponent {
   }
 
   changeHandler(event: Event) {
-    console.log(event);
+    const input = event.target as HTMLInputElement;
+    const newAge = parseInt(input.value);
+    this.age.set(newAge);
   }
 
   changeHandler2(event: Event) {

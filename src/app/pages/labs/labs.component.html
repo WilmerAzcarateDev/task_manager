@@ -8,7 +8,7 @@
   <hr />
   <h2>{{ "Hola ".repeat(4) }}</h2>
   <p>La suma de 3 + 3 es {{ 3 + 3 }}</p>
-  <p>Hola soy {{ name() }} y mi edad es {{ age }}</p>
+  <p>Hola soy {{ name() }} y mi edad es {{ age() }}</p>
   <hr />
   <img [src]="imagen" alt="a wolf" />
   <input type="text" [value]="name()" name="name" id="txtName" />
@@ -21,7 +21,7 @@
   <h3>(Change)</h3>
   <input
     type="number"
-    [value]="person.age"
+    [value]="age()"
     (change)="changeHandler($event)"
     name="age"
     id="numberAge"
@@ -58,4 +58,13 @@
     id="txtPersonName"
   />
   <p>name: {{ name() }}</p>
+  <hr />
+  <div *ngIf="age() >= 18; else elseAge">
+    <p>Eres mayor de edad</p>
+  </div>
+  <ng-template #elseAge>
+    <div>
+      <p>Eres menor de edad</p>
+    </div>
+  </ng-template>
 </div>
