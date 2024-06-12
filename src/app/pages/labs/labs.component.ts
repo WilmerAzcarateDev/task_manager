@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css',
 })
@@ -30,6 +31,12 @@ export class LabsComponent {
     age: 18,
     avatar: 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg',
   };
+
+  colorCtrl= new FormControl();
+
+  constructor(){
+    this.colorCtrl.valueChanges.subscribe((value)=>console.log(value));
+  }
 
   clickHandler() {
     alert('Hola');

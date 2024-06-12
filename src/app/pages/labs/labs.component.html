@@ -72,4 +72,7 @@
     <p *ngSwitchCase="18">Recien eres un adulto</p>
     <p *ngSwitchDefault>No se que eres</p>
   </div>
+  <hr>
+  <input [formControl]="colorCtrl" type="color" name="color" id="colorInput">
+  <p>color: {{ colorCtrl.value }}</p>
 </div>
