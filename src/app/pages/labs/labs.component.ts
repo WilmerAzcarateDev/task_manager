@@ -30,4 +30,16 @@ export class LabsComponent {
     age: 18,
     avatar: 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg'
   }
+
+  clickHandler(){
+    alert("Hola");
+  }
+
+  dbClickHandler(){
+    alert("Hola x2");
+  }
+
+  changeHandler(event:Event){
+    console.log(event);
+  }
 }
