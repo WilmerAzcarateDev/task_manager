@@ -6,13 +6,13 @@
       {{ task }}
     </li>
   </ul>
-  <hr />
+  <hr>
   <h2>{{'Hola '.repeat(4)}}</h2>
   <p>La suma de 3 + 3 es {{3 + 3}}</p>
-  <p>Hola soy {{ name }} y mi edad es {{ age }}</p>
+  <p>Hola soy {{ name() }} y mi edad es {{ age }}</p>
   <hr>
   <img [src]="imagen" alt="a wolf">
-  <input type="text" [value]="name" name="name" id="txtName">
+  <input type="text" [value]="name()" name="name" id="txtName">
   <button [disabled]="disabled">Click me</button>
   <p>person: {{person.name}}</p>
   <hr>
@@ -26,4 +26,7 @@
   <input type="text" [value]="person.name" (keydown)="keyDownHandler($event)" name="personName2" id="txtPersonName2">
   <h3>(Keydown shift t)</h3>
   <input type="text" [value]="person.name" (keydown.shift.t)="shiftHandler()" name="personName3" id="txtPersonName3">
+  <hr>
+  <input type="text" [value]="name()" (change)="changeHandler2($event)" name="personName" id="txtPersonName">
+  <p>name: {{ name() }}</p>
 </div>
