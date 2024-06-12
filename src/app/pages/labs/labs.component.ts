@@ -6,16 +6,16 @@ import { Component, signal } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './labs.component.html',
-  styleUrl: './labs.component.css'
+  styleUrl: './labs.component.css',
 })
 export class LabsComponent {
   welcome = 'Hola !!';
 
-  tasks = [
+  tasks = signal([
     'Instalar el proyecto',
     'Crear proyecto',
-    'Crear componente'
-  ];
+    'Crear componente',
+  ]);
 
   name = signal('Wilmer');
 
@@ -28,34 +28,33 @@ export class LabsComponent {
   person = {
     name: 'Wilmer',
     age: 18,
-    avatar: 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg'
+    avatar: 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg',
+  };
+
+  clickHandler() {
+    alert('Hola');
   }
 
-  clickHandler(){
-    alert("Hola");
+  dbClickHandler() {
+    alert('Hola x2');
   }
 
-  dbClickHandler(){
-    alert("Hola x2");
-  }
-
-  changeHandler(event:Event){
+  changeHandler(event: Event) {
     console.log(event);
   }
 
-  changeHandler2(event:Event){
+  changeHandler2(event: Event) {
     const input = event.target as HTMLInputElement;
     const newValue = input.value;
     this.name.set(newValue);
   }
 
-  keyDownHandler(event:KeyboardEvent){
+  keyDownHandler(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
     console.log(input.value);
   }
-  
-  shiftHandler(){
-    console.log("Presionaste shift + t");
-    
+
+  shiftHandler() {
+    console.log('Presionaste shift + t');
   }
 }
