@@ -9,15 +9,25 @@ import { Component } from '@angular/core';
   styleUrl: './labs.component.css'
 })
 export class LabsComponent {
-  welcome = "Hola !!";
+  welcome = 'Hola !!';
 
   tasks = [
-    "Instalar el proyecto",
-    "Crear proyecto",
-    "Crear componente"
+    'Instalar el proyecto',
+    'Crear proyecto',
+    'Crear componente'
   ];
 
   name = 'Wilmer';
 
   age = 18;
+
+  disabled = true;
+
+  imagen = 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg';
+
+  person = {
+    name: 'Wilmer',
+    age: 18,
+    avatar: 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg'
+  }
 }
