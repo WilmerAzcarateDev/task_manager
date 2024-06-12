@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { Task } from '../../models/task.model';
 
 @Component({
@@ -27,6 +27,14 @@ export class HomeComponent {
       completed: false,
     },
   ]);
+
+  items = computed(()=>{
+    if (this.tasks().length == 0 || this.tasks().length > 1) {
+      return 'items';
+    }else{
+      return 'item';
+    }
+  });
 
   changeHandler(event: Event) {
     const input = event.target as HTMLInputElement;

@@ -67,4 +67,9 @@
       <p>Eres menor de edad</p>
     </div>
   </ng-template>
+  <hr />
+  <div [ngSwitch]="age()">
+    <p *ngSwitchCase="18">Recien eres un adulto</p>
+    <p *ngSwitchDefault>No se que eres</p>
+  </div>
 </div>
