@@ -32,10 +32,13 @@ export class LabsComponent {
     avatar: 'https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg',
   };
 
-  colorCtrl= new FormControl();
+  colorCtrl= new FormControl('');
+
+  withControl = new FormControl(0);
 
   constructor(){
     this.colorCtrl.valueChanges.subscribe((value)=>console.log(value));
+    this.withControl.valueChanges.subscribe((value)=>console.log(value));
   }
 
   clickHandler() {
